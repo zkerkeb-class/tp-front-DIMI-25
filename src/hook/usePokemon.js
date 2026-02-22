@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const usePokemon = (pokemonUrl) => {
+const usePokemon = (pokemonId) => {
     const [pokemonData, setPokemonData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -8,7 +8,7 @@ const usePokemon = (pokemonUrl) => {
     useEffect(() => {
         const fetchPokemon = async () => {
             try {
-                const response = await fetch(pokemonUrl);
+                const response = await fetch(`api/pokemons/${pokemonId}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -22,7 +22,7 @@ const usePokemon = (pokemonUrl) => {
         };
 
         fetchPokemon();
-    }, [pokemonUrl]);
+    }, [pokemonId]);
 
     return { pokemonData, loading, error };
 };

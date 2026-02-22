@@ -1,0 +1,616 @@
+.groupes-container {
+  min-height: 100vh;
+  padding: 24px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.groupes-header {
+  max-width: 800px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.groupes-header .back-link {
+  display: inline-block;
+  color: var(--poke-cream);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition);
+}
+
+.groupes-header .back-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-6px);
+  color: var(--poke-white);
+}
+
+.groupes-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--poke-white);
+  margin: 0 0 8px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.groupes-subtitle {
+  color: var(--poke-cream);
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.groupes-create {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  flex-wrap: wrap;
+}
+
+.groupes-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--poke-white);
+}
+
+.groupes-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.groupes-input:focus {
+  outline: none;
+  border-color: var(--poke-yellow);
+}
+
+.groupes-create-btn {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--poke-yellow), var(--poke-yellow-dark));
+  color: var(--poke-black);
+  border: 3px solid var(--poke-black);
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.groupes-create-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(247, 208, 56, 0.4);
+}
+
+.groupes-battle-section {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.groupes-battle-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--poke-white);
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.groupes-battle-desc {
+  color: var(--poke-cream);
+  font-size: 0.95rem;
+  margin: 0 0 20px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.groupes-battle-selects {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.groupes-battle-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+}
+
+.groupes-battle-select-wrap label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--poke-cream);
+}
+
+.groupes-battle-select {
+  padding: 12px 16px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.12);
+  /*color: var(--poke-white);*/
+  cursor: pointer;
+}
+
+.groupes-battle-select:focus {
+  outline: none;
+  border-color: var(--poke-yellow);
+}
+
+.groupes-battle-vs {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--poke-yellow);
+  align-self: center;
+  padding-bottom: 8px;
+}
+
+.groupes-battle-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--poke-red), var(--poke-red-dark));
+  color: var(--poke-white);
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.groupes-battle-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(227, 53, 13, 0.5);
+}
+
+.groupes-battle-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.groupes-battle-result {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  animation: bounce-in 0.4s ease-out;
+}
+
+.groupes-battle-winner {
+  text-align: center;
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 24px;
+}
+
+.groupes-battle-winner.A {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(5, 150, 105, 0.3) 100%);
+  border: 3px solid #059669;
+}
+
+.groupes-battle-winner.B {
+  background: linear-gradient(135deg, rgba(48, 167, 215, 0.25) 0%, rgba(37, 99, 235, 0.3) 100%);
+  border: 3px solid var(--poke-blue);
+}
+
+.groupes-battle-winner.tie {
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.25) 0%, rgba(75, 85, 99, 0.3) 100%);
+  border: 3px solid #6b7280;
+}
+
+.groupes-battle-winner-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--poke-cream);
+  margin-bottom: 6px;
+}
+
+.groupes-battle-winner-name {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--poke-white);
+  margin-bottom: 8px;
+}
+
+.groupes-battle-winner-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--poke-white);
+}
+
+.groupes-battle-score {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--poke-cream);
+}
+
+.groupes-battle-rounds h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--poke-white);
+  margin: 0 0 14px;
+}
+
+.groupes-battle-round {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+}
+
+.groupes-round-num {
+  font-weight: 700;
+  color: var(--poke-yellow);
+  min-width: 70px;
+}
+
+.groupes-round-pokes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.groupes-round-poke {
+  font-weight: 600;
+  color: var(--poke-cream);
+}
+
+.groupes-round-vs {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.groupes-round-winner {
+  font-weight: 700;
+  color: var(--poke-white);
+}
+
+.groupes-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--poke-cream);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.groupes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.groupes-team-card {
+  background: var(--poke-white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  border: 3px solid #e5e7eb;
+  animation: bounce-in 0.4s ease-out;
+}
+
+.groupes-team-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.groupes-team-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--poke-blue-dark);
+  margin: 0;
+  cursor: pointer;
+  flex: 1;
+}
+
+.groupes-team-name:hover {
+  color: var(--poke-blue);
+}
+
+.groupes-edit-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid var(--poke-blue);
+  border-radius: var(--radius-sm);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.groupes-team-count {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.groupes-delete-team {
+  padding: 8px 12px;
+  border: none;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform var(--transition);
+}
+
+.groupes-delete-team:hover {
+  transform: scale(1.1);
+}
+
+.groupes-team-meta {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.groupes-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.groupes-meta-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6b7280;
+  min-width: 80px;
+}
+
+.groupes-type-pill {
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: var(--poke-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.groupes-type-pill.small {
+  padding: 2px 8px;
+  font-size: 0.7rem;
+}
+
+.groupes-weak-pill {
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.groupes-team-pokemons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.groupes-poke-slot {
+  position: relative;
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.groupes-poke-slot.empty {
+  border-style: dashed;
+  background: #f1f5f9;
+}
+
+.groupes-poke-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--poke-black);
+}
+
+.groupes-poke-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.groupes-poke-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.groupes-remove-poke {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.groupes-remove-poke:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.groupes-team-actions {
+  margin-bottom: 12px;
+}
+
+.groupes-suggest-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--poke-blue), #2580b0);
+  color: var(--poke-white);
+  border: 3px solid var(--poke-blue-dark);
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.groupes-suggest-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(48, 167, 215, 0.4);
+}
+
+.groupes-suggestions {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.groupes-suggestions h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--poke-blue-dark);
+  margin: 0 0 16px;
+}
+
+.groupes-suggest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.groupes-suggest-item {
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.groupes-suggest-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.groupes-suggest-info {
+  width: 100%;
+  text-align: center;
+}
+
+.groupes-suggest-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--poke-black);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.groupes-suggest-types {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.groupes-suggest-reason {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.groupes-add-suggest-btn {
+  padding: 8px 16px;
+  background: var(--poke-yellow);
+  color: var(--poke-black);
+  border: 2px solid var(--poke-black);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform var(--transition);
+}
+
+.groupes-add-suggest-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.groupes-add-suggest-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.groupes-no-suggest {
+  color: #6b7280;
+  font-weight: 600;
+  margin: 0;
+}
+
+.groupes-add-poke-section {
+  max-width: 900px;
+  margin: 28px auto 0;
+}
+
+.groupes-help {
+  font-size: 0.9rem;
+  color: var(--poke-cream);
+  opacity: 0.9;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .groupes-team-pokemons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
