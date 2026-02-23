@@ -169,3 +169,8 @@ src/
 | `/groupes-combat` | Groupes de combat (équipes de 6 + suggestions) |
 
 Toutes les fonctionnalités listées ci-dessus sont intégrées et utilisables dans l’application.
+
+
+## Vidéo de présentation du site Web Pokédex
+
+[https://youtu.be/WxAojmCthzc](https://youtu.be/WxAojmCthzc)
