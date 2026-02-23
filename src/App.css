@@ -1,6 +1,262 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.app-container {
+  min-height: 100vh;
+  padding-bottom: 48px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 280px;
+  background: linear-gradient(180deg, var(--poke-red) 0%, var(--poke-red-dark) 60%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.app-header {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 24px 28px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.header-content {
+  flex: 1;
   text-align: center;
+}
+
+.app-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(135deg, var(--poke-red), var(--poke-red-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.pokeball-icon {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(180deg, var(--poke-red) 50%, var(--poke-black) 50%);
+  border-radius: 50%;
+  border: 4px solid var(--poke-black);
+  position: relative;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.pokeball-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: var(--poke-white);
+  border: 3px solid var(--poke-black);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--poke-cream);
+}
+
+.app-subtitle {
+  margin: 8px 0 0;
+  color: var(--poke-blue-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.discover-header-btn {
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: var(--poke-white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.discover-header-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(139, 92, 246, 0.5);
+}
+
+.groupes-combat-btn {
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #059669, #047857);
+  color: var(--poke-white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.groupes-combat-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(5, 150, 105, 0.5);
+}
+
+.favoris-header-btn {
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  color: var(--poke-white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeInUp 0.5s ease-out 0.1s both;
+}
+
+.favoris-header-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(236, 72, 153, 0.5);
+}
+
+.favoris-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #db2777;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.compare-pokemon-btn {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--poke-blue), #2580b0);
+  color: var(--poke-white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(48, 167, 215, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 3px solid var(--poke-blue-dark);
+  animation: fadeInUp 0.5s ease-out 0.1s both;
+}
+
+.compare-pokemon-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(48, 167, 215, 0.5);
+}
+
+.add-pokemon-btn {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--poke-yellow), var(--poke-yellow-dark));
+  color: var(--poke-black);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(247, 208, 56, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 3px solid var(--poke-black);
+  animation: fadeInUp 0.5s ease-out 0.1s both;
+}
+
+.add-pokemon-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(247, 208, 56, 0.5);
+}
+
+.btn-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+  margin-top: 28px;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+  }
+
+  .app-title {
+    font-size: 1.75rem;
+  }
+
+  .pokeball-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .discover-header-btn,
+  .favoris-header-btn,
+  .groupes-combat-btn,
+  .compare-pokemon-btn,
+  .add-pokemon-btn {
+    flex: 1;
+    min-width: 90px;
+    justify-content: center;
+  }
 }
